@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  appGreeting = 'Good evening!';
+
   inputHandler(args: any) {
     const input = args.target as HTMLInputElement;
     console.log('input', input.value);
