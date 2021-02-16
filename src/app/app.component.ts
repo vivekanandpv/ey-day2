@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  appGreeting = 'Good evening!';
+  show = false;
 
-  inputHandler(args: any) {
-    const input = args.target as HTMLInputElement;
-    console.log('input', input.value);
+  styleObject = {
+    color: 'red',
+    'font-size': '24px',
+    border: '0.5px solid green',
+  };
+
+  cities = ['Mumbai', 'Bengaluru', 'Haveri'];
+
+  toggle() {
+    this.cities = [...this.cities, 'New City'];
   }
 }

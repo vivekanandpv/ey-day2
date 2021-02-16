@@ -1,8 +1,10 @@
 <div class="container p-5">
   <h3>Learning Binding in Angular</h3>
   <hr />
-  <input class="form-control" type="text" (input)="inputHandler($event)" />
-  <hr />
+  <p [ngStyle]="styleObject" *ngIf="show">Good evening</p>
+  <button class="btn btn-primary" (click)="toggle()">Toggle</button>
 
-  <app-sample [greeting]="appGreeting"></app-sample>
+  <ul>
+    <li *ngFor="let city of cities">{{ city }}</li>
+  </ul>
 </div>

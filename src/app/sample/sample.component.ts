@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sample',
@@ -6,9 +6,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./sample.component.scss'],
 })
 export class SampleComponent implements OnInit {
-  @Input() greeting: string = '';
+  @Input() greeting = '';
+  @Input() count = 0;
+  @Output() login = new EventEmitter<string>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  clickHandler() {
+    console.log('Local handler');
+    this.login.emit('Custom event');
+  }
 }
